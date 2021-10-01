@@ -11,7 +11,7 @@
         {{ if error != "" }}
             <p class="text-red-800 font-bold">{{ error }}</p>
         {{ else }}
-            {{ collection from="{collections}" sort="updated_at:desc" limit="{limit}" }}
+        {{ collection from="{collections}" limit="{limit}" published:in="false|true" sort="updated_at:desc" updated_at:isset }}
                 <div class="flex justify-between py-1 text-sm">
                     <div class="flex justify-between flex-grow">
                         <a href="{{ edit_url }}" class="font-bold">
