@@ -1,0 +1,32 @@
+<div class="h-full p-0 card">
+    <header class="flex items-center justify-between p-2 border-b">
+        <h2 class="flex items-center">
+            <div class="w-6 h-6 mr-1 text-grey-80">
+                {{ icon }}
+            </div>
+            <span>{{ trans key="Continue Editing" }}</span>
+        </h2>
+    </header>
+    <div class="px-2 py-1">
+        {{ if error != "" }}
+            <p class="text-red-800 font-bold">{{ error }}</p>
+        {{ else }}
+            {{ collection from="{collections}" sort="updated_at:desc" limit="{limit}" }}
+                <div class="flex justify-between py-1 text-sm">
+                    <div class="flex justify-between flex-grow">
+                        <a href="{{ edit_url }}" class="font-bold">
+                            {{ title }}
+                            {{ config:statamic:cp:enabled }}
+                        </a>
+                        <span class="mt-px ml-2 text-white badge-sm bg-grey-70">
+                            {{ collection.title }}
+                        </span> 
+                    </div>
+                    <div class="pl-2 text-grey-70">
+                        {{ updated_at format="d.m.y" }}
+                    </div>
+                </div>
+            {{ /collection }}
+        {{ /if }}
+    </div>
+</div>
