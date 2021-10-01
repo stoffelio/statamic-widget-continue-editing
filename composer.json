@@ -2,7 +2,7 @@
     "name": "webographen/statamic-widget-continue-editing",
     "license": "MIT",
     "type": "statamic-addon",
-    "description": "List of last edited entries in control panel",
+    "description": "List of last edited entries in Statamic control panel",
     "autoload": {
       "psr-4": {
         "Webographen\\ContinueEditing\\": "src"
