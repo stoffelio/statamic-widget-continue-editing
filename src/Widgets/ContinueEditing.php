@@ -28,7 +28,7 @@ class ContinueEditing extends Widget
 
         $icon = \Statamic::svg('content-writing');
 
-        return view('widgets.continue_editing', [
+        return view('webographen::widgets.continue_editing', [
             'error' => $error,
             'collections' => $collections,
             'icon' => $icon,
