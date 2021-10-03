@@ -11,7 +11,7 @@
       @foreach ($results as $result)
             <div class="flex justify-between py-1 text-sm">
                 <div class="flex justify-between flex-grow">
-                    <a href="{{ $result->edit_url }}" class="font-bold">
+                    <a href="{{ $result->editUrl() }}" class="font-bold">
                         {{ $result->title }}
                     </a>
                     <span class="mt-px ml-2 text-white badge-sm bg-grey-70">
@@ -19,7 +19,7 @@
                     </span> 
                 </div>
                 <div class="pl-2 text-grey-70">
-                    {{ $result->updated_at }}
+                    {{ Carbon\Carbon::createFromTimestamp($result->updated_at)->format(config('statamic.cp.date_format')) }}
                 </div>
             </div>
         @endforeach
