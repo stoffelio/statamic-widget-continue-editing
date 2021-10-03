@@ -19,28 +19,31 @@ class ContinueEditing extends Widget
         $limit =  $this->config('limit', 5);
 
         if (strpos("*", $collections) !== false) {
+
             $results = Entry::query()
                             ->orderBy('updated_at', 'desc')
                             ->limit($limit)
                             ->get();
+
         } else {
+
+            // make sure all collections exist
             foreach (explode("|", $collections) as $collection) {
                 if (!CollectionAPI::handleExists($collection)) {
                     return "Error: Collection [$collection] doesn't exist.";
                 }
             }
+
             $results = Entry::query()
                             ->whereIn('collection', explode("|", $collections))
                             ->orderBy('updated_at', 'desc')
                             ->limit($limit)
                             ->get();
+
         }
 
-        $icon = \Statamic::svg('content-writing');
-
         return view('webographen::widgets.continue_editing', [
-            'results' => $results,
-            'icon' => $icon
+            'results' => $results
         ]);
     }
 }
