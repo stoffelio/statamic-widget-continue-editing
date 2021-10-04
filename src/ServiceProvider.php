@@ -1,15 +1,15 @@
 <?php
 
-namespace Webographen\ContinueEditing;
+namespace Webographen\CacheController;
 
 use Statamic\Providers\AddonServiceProvider;
-use Webographen\ContinueEditing\Widgets\ContinueEditing;
+use Webographen\CacheController\Widgets\CacheController;
 
 class ServiceProvider extends AddonServiceProvider
 {
     protected $viewNamespace = 'webographen';
 
     protected $widgets = [
-        ContinueEditing::class
+        CacheController::class
     ];
 }

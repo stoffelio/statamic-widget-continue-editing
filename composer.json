@@ -1,21 +1,21 @@
 {
-    "name": "webographen/statamic-widget-continue-editing",
+    "name": "webographen/statamic-widget-cache-controller",
     "license": "MIT",
     "type": "statamic-addon",
-    "description": "List of last edited entries in Statamic control panel",
+    "description": "Empty Statamic's caches from the control panel",
     "autoload": {
       "psr-4": {
-        "Webographen\\ContinueEditing\\": "src"
+        "Webographen\\CacheController\\": "src"
       }
     },
     "extra": {
       "statamic": {
-        "name": "Statamic Widget: Continue Editing",
-        "description": "List of last edited entries in control panel"
+        "name": "Statamic Widget: Cache Controller",
+        "description": "Empty Statamic's caches from the control panel"
       },
       "laravel": {
         "providers": [
-          "Webographen\\ContinueEditing\\ServiceProvider"
+          "Webographen\\CacheController\\ServiceProvider"
         ]
       }
     },
