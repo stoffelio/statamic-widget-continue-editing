@@ -19,7 +19,7 @@ To add the widget to  your control panel dashboard, edit the config under `confi
 ```php
 [
     'type' => 'continue_editing',
-    'width' => 50,
+    'width' => 100,
 ],
 
 ```
@@ -31,7 +31,7 @@ By default the widget display the last five entries across all collections. You 
 ```php
 [
     'type' => 'continue_editing',
-    'width' => 50,
+    'width' => 100,
     'collections' => '*',
     'limit' => 5
 ],

@@ -19,7 +19,7 @@
                     </span> 
                 </div>
                 <div class="pl-2 text-grey-70">
-                    {{ Carbon\Carbon::createFromTimestamp($result->updated_at)->format(config('statamic.cp.date_format')) }}
+                    {{ $result->augmentedValue('updated_at')->format(config('statamic.cp.date_format')) }}
                 </div>
             </div>
         @endforeach
