@@ -19,7 +19,6 @@ To add the widget to  your control panel dashboard, edit the config under `confi
     'type' => 'continue_editing',
     'width' => 100,
 ],
-
 ```
 
 ## Optional Parameters
@@ -33,7 +32,6 @@ By default the widget display the last five entries across all collections. You 
     'collections' => '*',
     'limit' => 5
 ],
-
 ```
 
 **Collections:** One or more piped collections to display - e.g. 'pages', 'pages|posts', or '*' (any) for the default behavior
