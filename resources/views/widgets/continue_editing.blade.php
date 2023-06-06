@@ -2,7 +2,7 @@
     <header class="flex items-center justify-between p-2 border-b">
         <h2 class="flex items-center">
             <div class="w-6 h-6 mr-1 text-grey-80">
-                @cp_svg('content-writing')
+                @cp_svg('icons/light/content-writing')
             </div>
             <span>{{ __('Continue Editing') }}</span>
         </h2>
@@ -10,11 +10,11 @@
     <div class="px-2 py-1">
       @foreach ($results as $result)
             <div class="flex justify-between py-1 text-sm">
-                <div class="flex justify-between flex-grow">
+                <div class="flex justify-between grow">
                     <a href="{{ $result->editUrl() }}" class="font-bold">
                         {{ $result->title }}
                     </a>
-                    <span class="mt-px ml-2 text-white badge-sm bg-grey-70">
+                    <span class="mt-px ml-2 text-white badge-sm bg-gray-700">
                         {{ $result->collection()->id() }}
                     </span> 
                 </div>
