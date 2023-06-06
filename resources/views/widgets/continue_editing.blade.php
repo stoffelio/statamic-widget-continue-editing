@@ -1,7 +1,7 @@
 <div class="h-full p-0 card">
     <header class="flex items-center justify-between p-2 border-b">
         <h2 class="flex items-center">
-            <div class="w-6 h-6 mr-1 text-grey-80">
+            <div class="w-6 h-6 mr-1 text-gray-800">
                 @cp_svg('icons/light/content-writing')
             </div>
             <span>{{ __('Continue Editing') }}</span>
@@ -18,7 +18,7 @@
                         {{ $result->collection()->id() }}
                     </span> 
                 </div>
-                <div class="pl-2 text-grey-70">
+                <div class="pl-2 text-gray-700">
                     {{ $result->updated_at->format(config('statamic.cp.date_format')) }}
                 </div>
             </div>
