@@ -7,23 +7,25 @@
             <span>{{ __('Continue Editing') }}</span>
         </h2>
     </header>
-    <table class="p-4 w-full">
-      @foreach ($results as $result)
-            <tr>
-                <td class="text-sm align-top text-left">
-                    <a href="{{ $result->editUrl() }}" class="font-bold">
-                        {{ $result->title }}
-                    </a>
-                </td>
-                <td class="text-xs align-top px-2 text-center">
-                    <span class="mt-px ml-2 text-white badge-sm bg-gray-700">
-                        {{ $result->collection()->id() }}
-                    </span>
-                </td>
-                <td class="text-xs align-top text-right text-gray-700">
-                    {{ $result->updated_at->format(config('statamic.cp.date_format')) }}
-                </td>
-            </tr>
-        @endforeach
-    </table>
+    <div class="p-4">
+        <table class="w-full">
+          @foreach ($results as $result)
+                <tr>
+                    <td class="py-1 text-sm align-top text-left">
+                        <a href="{{ $result->editUrl() }}" class="font-bold">
+                            {{ $result->title }}
+                        </a>
+                    </td>
+                    <td class="py-1 text-xs align-top px-2 text-center">
+                        <span class="mt-px ml-2 text-white badge-sm bg-gray-700">
+                            {{ $result->collection()->id() }}
+                        </span>
+                    </td>
+                    <td class="py-1 text-xs align-top text-right text-gray-700">
+                        {{ $result->updated_at->format(config('statamic.cp.date_format')) }}
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
 </div>
