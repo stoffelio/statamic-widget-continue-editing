@@ -2,9 +2,9 @@
 
 namespace Webographen\ContinueEditing\Widgets;
 
-use Statamic\Widgets\Widget;
-use Statamic\Facades\Entry;
 use Statamic\Facades\Collection as CollectionAPI;
+use Statamic\Facades\Entry;
+use Statamic\Widgets\Widget;
 
 class ContinueEditing extends Widget
 {
@@ -16,34 +16,27 @@ class ContinueEditing extends Widget
     public function html()
     {
         $collections = $this->config('collections', '*');
-        $limit =  $this->config('limit', 5);
+        $limit = $this->config('limit', 5);
 
-        if (strpos("*", $collections) !== false) {
+        $query = Entry::query()
+            ->whereNotNull('updated_at')
+            ->orderBy('updated_at', 'desc')
+            ->limit($limit);
 
-            $results = Entry::query()
-                            ->orderBy('updated_at', 'desc')
-                            ->limit($limit)
-                            ->get();
+        if (! str_contains($collections, '*')) {
+            $handles = explode('|', $collections);
 
-        } else {
-
-            // make sure all collections exist
-            foreach (explode("|", $collections) as $collection) {
-                if (!CollectionAPI::handleExists($collection)) {
-                    return "Error: Collection [$collection] doesn't exist.";
+            foreach ($handles as $handle) {
+                if (! CollectionAPI::handleExists($handle)) {
+                    return "Error: Collection [$handle] doesn't exist.";
                 }
             }
 
-            $results = Entry::query()
-                            ->whereIn('collection', explode("|", $collections))
-                            ->orderBy('updated_at', 'desc')
-                            ->limit($limit)
-                            ->get();
-
+            $query->whereIn('collection', $handles);
         }
 
         return view('webographen::widgets.continue_editing', [
-            'results' => $results
+            'results' => $query->get(),
         ]);
     }
 }

@@ -4,22 +4,22 @@
     "type": "statamic-addon",
     "description": "List of last edited entries in Statamic control panel",
     "autoload": {
-      "psr-4": {
-        "Webographen\\ContinueEditing\\": "src"
-      }
+        "psr-4": {
+            "Webographen\\ContinueEditing\\": "src"
+        }
     },
     "extra": {
-      "statamic": {
-        "name": "Statamic Widget: Continue Editing",
-        "description": "List of last edited entries in control panel"
-      },
-      "laravel": {
-        "providers": [
-          "Webographen\\ContinueEditing\\ServiceProvider"
-        ]
-      }
+        "statamic": {
+            "name": "Statamic Widget: Continue Editing",
+            "description": "List of last edited entries in control panel"
+        },
+        "laravel": {
+            "providers": [
+                "Webographen\\ContinueEditing\\ServiceProvider"
+            ]
+        }
     },
     "require": {
-      "statamic/cms": "^3.3|^4.0|^5.0"
+        "statamic/cms": "^6.0"
     }
-  }
+}
