@@ -6,7 +6,7 @@ This widget lists the last edited entries in the control panel so you can jump r
 
 - Statamic v6
 
-For Statamic v3, v4 and v5, use v1.2.1.
+For Statamic v3, v4 and v5, use v1.3.2.
 
 ## Installation
 
